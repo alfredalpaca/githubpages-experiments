@@ -23,24 +23,63 @@
 </head>
 <header class=" modal-header">
     <div class="container-fluid btn-block">
-        <a id="link1" onClick="change_disp()" href="#" class="btn">link1</a>
-        <button id="but" onclick="change_disp()" class="btn">button</button>
-        <a id="link2" href="#" class="btn">tab2</a>
-        <a id="link3" href="#" class="btn">tab3</a>
+        <a id="link1" onclick="change_disp(1)" href="#" class="btn">link1</a>
+        <button id="but" onclick="change_disp(2)" class="btn">button</button>
     </div>
 </header>
 <body>
-    <div class=" container-fluid">
-        <div class=" jumbotron-fluid">
-            <h2 id="text" class=" text-center text-capitalize">Hello world</h2>
+    <div id="contain" class=" container-fluid">
+        <div id="textdiv" class=" jumbotron-fluid">
+            <h2 id="text" class=" text-center text-capitalize">Hello</h2>
         </div>
+    </div>
+    
+    
+    
+    <div id="link1contain" class=" container-fluid d-none">
+        <h2 class=" text-center">New stuff</h2>
+        <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
+    </div>
+    
+    
+    
+    <div id="link2contain" class=" container-fluid d-none">
+        <h2 class=" text-center text-capitalize">same stuff, new div</h2>
+        <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
-        function change_disp() {
-            alert("hey there")
-            document.getElementById("text").innerHTML = "You clicked a link";
+        function change_disp(i) {
+            var initialcontainer = document.getElementById("contain");
+            var contain1 = document.getElementById("link1contain");
+            var contain2 = document.getElementById("link2contain");
+            if(i==1){
+                visibilty_toggle(initialcontainer, false);
+                visibilty_toggle(contain1, true);
+                visibilty_toggle(contain2, false);
+            } else if(i==2){
+                visibilty_toggle(initialcontainer, false);
+                visibilty_toggle(contain1, false);
+                visibilty_toggle(contain2, true);
+            } else{
+                visibilty_toggle(initialcontainer, true);
+                visibilty_toggle(contain1, false);
+                visibilty_toggle(contain2, false);
+                
+            }
+            // console.log("contain1", contain1.classList.toString());
+            // console.log("contain2", contain2.classList.toString());
+        }
+        function visibilty_toggle(element, makevisible) {
+            if(makevisible===true){
+                element.classList.add("d-block");
+                element.classList.remove("d-none");
+            }
+            else{
+                element.classList.add("d-none");
+                element.classList.remove("d-block")
+            }
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
