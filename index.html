@@ -21,55 +21,76 @@
         }
     </style>
 </head>
+
 <header class=" modal-header">
-    <div class="container-fluid btn-block">
-        <a id="link1" onclick="change_disp(1)" href="#" class="btn">link1</a>
-        <button id="but" onclick="change_disp(2)" class="btn">button</button>
+    <div id="navparent" class="container-fluid btn-block">
+        <a id="1" onclick="newchangedisp(1)" href="#" class="btn">link1</a>
+        <button id="2" onclick="newchangedisp(2)" class="btn">button</button>
     </div>
 </header>
+
 <body>
-    <div id="contain" class=" container-fluid">
-        <div id="textdiv" class=" jumbotron-fluid">
-            <h2 id="text" class=" text-center text-capitalize">Hello</h2>
+    <div id="contentdiv">
+
+
+        <div id="contain" class=" container-fluid">
+            <div id="textdiv" class=" jumbotron-fluid">
+                <h2 id="text" class=" text-center text-capitalize">Hello</h2>
+            </div>
         </div>
-    </div>
-    
-    
-    
-    <div id="link1contain" class=" container-fluid d-none">
-        <h2 class=" text-center">New stuff</h2>
-        <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
-    </div>
-    
-    
-    
-    <div id="link2contain" class=" container-fluid d-none">
-        <h2 class=" text-center text-capitalize">same stuff, new div</h2>
-        <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
+        
+        
+        
+        <div id="contain1" class=" container-fluid d-none">
+            <h2 class=" text-center">New stuff</h2>
+            <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
+        </div>
+        
+        
+        
+        <div id="contain2" class=" container-fluid d-none">
+            <h2 class=" offset-4 col-4 text-capitalize text-center">same stuff, new div</h2>
+            <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
+        </div>
+
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
-        function change_disp(i) {
-            var initialcontainer = document.getElementById("contain");
-            var contain1 = document.getElementById("link1contain");
-            var contain2 = document.getElementById("link2contain");
-            if(i==1){
-                visibilty_toggle(initialcontainer, false);
-                visibilty_toggle(contain1, true);
-                visibilty_toggle(contain2, false);
-            } else if(i==2){
-                visibilty_toggle(initialcontainer, false);
-                visibilty_toggle(contain1, false);
-                visibilty_toggle(contain2, true);
-            } else{
-                visibilty_toggle(initialcontainer, true);
-                visibilty_toggle(contain1, false);
-                visibilty_toggle(contain2, false);
+        // function change_disp(i) {
+        //     var initialcontainer = document.getElementById("contain");
+        //     var contain1 = document.getElementById("link1contain");
+        //     var contain2 = document.getElementById("link2contain");
+        //     if(i==1){
+        //         visibilty_toggle(initialcontainer, false);
+        //         visibilty_toggle(contain1, true);
+        //         visibilty_toggle(contain2, false);
+        //     } else if(i==2){
+        //         visibilty_toggle(initialcontainer, false);
+        //         visibilty_toggle(contain1, false);
+        //         visibilty_toggle(contain2, true);
+        //     } else{
+        //         visibilty_toggle(initialcontainer, true);
+        //         visibilty_toggle(contain1, false);
+        //         visibilty_toggle(contain2, false);
                 
+        //     }
+        //     // console.log("contain1", contain1.classList.toString());
+        //     // console.log("contain2", contain2.classList.toString());
+        // }
+        function newchangedisp(id) {
+            var content = document.getElementById("contain"+id);
+            console.log("content"+id)
+            var parent = document.getElementById("contentdiv")
+            for(i = 0; i<parent.childElementCount; ++i){
+                if(parent.children[i] === content){
+                    visibilty_toggle(parent.children[i], true);
+                }
+                else{
+                    visibilty_toggle(parent.children[i], false);
+                }
             }
-            // console.log("contain1", contain1.classList.toString());
-            // console.log("contain2", contain2.classList.toString());
         }
         function visibilty_toggle(element, makevisible) {
             if(makevisible===true){
