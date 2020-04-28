@@ -23,17 +23,37 @@
 </head>
 
 <header class=" modal-header">
-    <div id="navparent" class="container-fluid btn-block">
+    <!-- <div id="navparent" class="container-fluid btn-block">
+        
         <a id="1" onclick="newchangedisp(1)" href="#" class="btn">link1</a>
         <button id="2" onclick="newchangedisp(2)" class="btn">button</button>
-    </div>
+        
+    </div> -->
+    <nav class=" navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="navlist" class=" navbar-nav">
+                <li class=" nav-item">
+                    <a href="#" onclick="newchangedisp(0)" class=" nav-link">link1</a>
+                </li>
+                <li class=" nav-item">
+                    <a href="#" onclick="newchangedisp(1)" class=" nav-link">link2</a>
+                </li>
+                <li class=" nav-item">
+                    <a href="#" onclick="newchangedisp(2)" class=" nav-link">link3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
 <body>
     <div id="contentdiv">
-
-
-        <div id="contain" class=" container-fluid">
+        
+        
+        <div id="contain0" class=" container-fluid">
             <div id="textdiv" class=" jumbotron-fluid">
                 <h2 id="text" class=" text-center text-capitalize">Hello</h2>
             </div>
@@ -52,36 +72,23 @@
             <h2 class=" offset-4 col-4 text-capitalize text-center">same stuff, new div</h2>
             <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
         </div>
-
-
+        
+        
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     <script>
-        // function change_disp(i) {
-        //     var initialcontainer = document.getElementById("contain");
-        //     var contain1 = document.getElementById("link1contain");
-        //     var contain2 = document.getElementById("link2contain");
-        //     if(i==1){
-        //         visibilty_toggle(initialcontainer, false);
-        //         visibilty_toggle(contain1, true);
-        //         visibilty_toggle(contain2, false);
-        //     } else if(i==2){
-        //         visibilty_toggle(initialcontainer, false);
-        //         visibilty_toggle(contain1, false);
-        //         visibilty_toggle(contain2, true);
-        //     } else{
-        //         visibilty_toggle(initialcontainer, true);
-        //         visibilty_toggle(contain1, false);
-        //         visibilty_toggle(contain2, false);
-                
-        //     }
-        //     // console.log("contain1", contain1.classList.toString());
-        //     // console.log("contain2", contain2.classList.toString());
-        // }
         function newchangedisp(id) {
             var content = document.getElementById("contain"+id);
-            console.log("content"+id)
+            // console.log("content"+id)
+            // var navparent = document.getElementById("navlist");
+            // for(i = 0; i>navparent.childElementCount; ++i){
+            //     if(i==id){
+            //         navparent.children[i].firstChild.classList.add("active");
+            //     }
+            //     else{
+            //         navparent.children[i].firstChild.classList.remove("active");
+            //     }
+            // }
             var parent = document.getElementById("contentdiv")
             for(i = 0; i<parent.childElementCount; ++i){
                 if(parent.children[i] === content){
