@@ -10,91 +10,81 @@
     
     <title>Alpaca testing</title>
     <style>
+        .jumbotron{
+            background-color: #999999;
+        }
         body{
-            background-color: rgb(153, 153, 153);
+            background-color: #999999;
         }
-        header{
-            background-color: rgb(199, 199, 199);
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
         }
-        h2{
-            margin-top: 10px;
+        .nav-link{
+            color: #afafaf;
+        }
+        .nav-link:hover{
+            color: #bcbcbc;
+        }
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-item.show .nav-link {
+            color: #424242;
+            background-color: #999999;
+            border-color: #dee2e6 #dee2e6 #fff;
         }
     </style>
 </head>
+
 <body>
-    
-    <nav class=" navbar navbar-expand-sm navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <a href="#" class=" navbar-brand">Alpaca</a>
-            <ul id="navlist" class=" navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="#" onclick="newchangedisp(0)" class=" nav-link">link1</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="newchangedisp(1)" class=" nav-link">link2</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="newchangedisp(2)" class=" nav-link">link3</a>
-                </li>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <!-- <div class="container-fluid"> -->
+            <a href="#" class="navbar-brand">Alpaca</a>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link mr-auto" href="#menu1" data-toggle="tab">menu1</a></li>
+                <li class="nav-item"><a class="nav-link mr-auto" href="#menu2" data-toggle="tab">menu2</a></li>
+                <li class="nav-item"><a class="nav-link mr-auto" href="#menu3" data-toggle="tab">menu3</a></li>
             </ul>
-        </div>
-    </nav>
-    
-    <div id="contentdiv">
+            <!-- </div> -->
+        </nav>
+        <main class="container-fluid">
+            <div class="jumbotron">
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="menu1">
+                        <h3>menu1</h3>
+                        <p class="offset 4 col-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eius, recusandae facere voluptatem, voluptatibus accusamus quidem adipisci saepe possimus deserunt nesciunt sint consectetur modi repellendus rerum reiciendis aliquid temporibus dignissimos?</p>
+                    </div>
+                    <div class="tab-pane fade" id="menu2">
+                        <h3>menu2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eius, recusandae facere voluptatem, voluptatibus accusamus quidem adipisci saepe possimus deserunt nesciunt sint consectetur modi repellendus rerum reiciendis aliquid temporibus dignissimos?</p>
+                    </div>
+                    <div class="tab-pane fade" id="menu3">
+                        <h3>menu3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eius, recusandae facere voluptatem, voluptatibus accusamus quidem adipisci saepe possimus deserunt nesciunt sint consectetur modi repellendus rerum reiciendis aliquid temporibus dignissimos?</p>
+                    </div>
+                </div>
+            </div>
+        </main>
         
-        
-        <div id="contain0" class=" container-fluid">
-            <div id="textdiv" class=" jumbotron-fluid">
-                <h2 id="text" class=" text-center text-capitalize">Hello</h2>
+        <div id="contentdiv">
+            <div id="contain0" class=" container-fluid d-none">
+                <div id="textdiv" class=" jumbotron-fluid">
+                    <h2 id="text" class=" text-center text-capitalize">Hello</h2>
+                </div>
+            </div>
+            <div id="contain1" class=" container-fluid d-none">
+                <h2 class=" text-center">New stuff</h2>
+                <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
+            </div>
+            <div id="contain2" class=" container-fluid d-none">
+                <h2 class=" offset-4 col-4 text-capitalize text-center">same stuff, new div</h2>
+                <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
             </div>
         </div>
         
-        
-        
-        <div id="contain1" class=" container-fluid d-none">
-            <h2 class=" text-center">New stuff</h2>
-            <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
-        </div>
-        
-        
-        
-        <div id="contain2" class=" container-fluid d-none">
-            <h2 class=" offset-4 col-4 text-capitalize text-center">same stuff, new div</h2>
-            <p class=" offset-4 col-4 border-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam delectus mollitia numquam quidem consequatur illum architecto, voluptate iure quasi. Commodi ab iusto ut distinctio, quia a eos cupiditate totam dolorum.</p>
-        </div>
-        
-        
-    </div>
+        <script src="alpacadisp.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+    </html>
     
-    <script>
-        function newchangedisp(id) {
-            var content = document.getElementById("contain"+id);
-            var parent = document.getElementById("contentdiv")
-            for(i = 0; i<parent.childElementCount; ++i){
-                if(parent.children[i] === content){
-                    visibilty_toggle(parent.children[i], true);
-                }
-                else{
-                    visibilty_toggle(parent.children[i], false);
-                }
-            }
-        }
-        function visibilty_toggle(element, makevisible) {
-            if(makevisible===true){
-                element.classList.add("d-block");
-                element.classList.remove("d-none");
-            }
-            else{
-                element.classList.add("d-none");
-                element.classList.remove("d-block")
-            }
-        }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js"></script>
-</body>
-</html>
