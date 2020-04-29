@@ -21,35 +21,28 @@
         }
     </style>
 </head>
-
-<header class=" modal-header">
-    <!-- <div id="navparent" class="container-fluid btn-block">
-        
-        <a id="1" onclick="newchangedisp(1)" href="#" class="btn">link1</a>
-        <button id="2" onclick="newchangedisp(2)" class="btn">button</button>
-        
-    </div> -->
-    <nav class=" navbar navbar-expand-lg navbar-light">
+<body>
+    
+    <nav class=" navbar navbar-expand-sm navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul id="navlist" class=" navbar-nav">
-                <li class=" nav-item">
+            <a href="#" class=" navbar-brand">Alpaca</a>
+            <ul id="navlist" class=" navbar-nav ml-auto">
+                <li class="nav-item">
                     <a href="#" onclick="newchangedisp(0)" class=" nav-link">link1</a>
                 </li>
-                <li class=" nav-item">
+                <li class="nav-item">
                     <a href="#" onclick="newchangedisp(1)" class=" nav-link">link2</a>
                 </li>
-                <li class=" nav-item">
+                <li class="nav-item">
                     <a href="#" onclick="newchangedisp(2)" class=" nav-link">link3</a>
                 </li>
             </ul>
         </div>
     </nav>
-</header>
-
-<body>
+    
     <div id="contentdiv">
         
         
@@ -79,16 +72,6 @@
     <script>
         function newchangedisp(id) {
             var content = document.getElementById("contain"+id);
-            // console.log("content"+id)
-            // var navparent = document.getElementById("navlist");
-            // for(i = 0; i>navparent.childElementCount; ++i){
-            //     if(i==id){
-            //         navparent.children[i].firstChild.classList.add("active");
-            //     }
-            //     else{
-            //         navparent.children[i].firstChild.classList.remove("active");
-            //     }
-            // }
             var parent = document.getElementById("contentdiv")
             for(i = 0; i<parent.childElementCount; ++i){
                 if(parent.children[i] === content){
